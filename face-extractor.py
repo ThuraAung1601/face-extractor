@@ -1,4 +1,5 @@
 '''
+face-extractor.py for Face Extraction from video files using pre-built libraries
 Author : Thura Aung
 Date : 18 Dec
 '''
@@ -77,8 +78,6 @@ def dsfd_detector(inputFile,outputPath):
   while cap.isOpened():
           ret,frame = cap.read()
           if ret:          
-              # BGR to RGB
-              frame = frame[:, :, ::-1]
               # DSFD detector
               faces = dsfd_detector.detect(frame)[:, :]
               for result in faces:
